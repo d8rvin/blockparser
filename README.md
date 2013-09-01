@@ -10,7 +10,7 @@ blockparser
     What:
     -----
 
-        A fairly fast, quick and dirty bitcoin whole blockchain parser.
+        A fairly fast, quick and dirty bitcoin / WDC whole blockchain parser.
 
     Why:
     ----
@@ -19,19 +19,21 @@ blockparser
 
         . Very quickly extract information from the entire blockchain.
 
-        . Code is simple and helps to understand how the data structure underlying bitcoin works.
+        . Code is simple and helps to understand how the data structure underlying bitcoin / WDC works.
 
     Build it:
     ---------
 
         . Turn your x86-64 Ubuntu box on
 
-        . Make sure you have an up to date satoshi client blockchain in ~/.bitcoin
+        . Make sure you have an up to date satoshi client blockchain in ~/.bitcoin or ~/.worldcoin
+        
+        . To compile blockparser for WDC uncomment the "-DWORLDCOIN" line in the Makefile
 
         . Run this:
 
             sudo apt-get install libssl-dev build-essential g++-4.4 libboost-all-dev libsparsehash-dev git-core perl
-            git clone git://github.com/znort987/blockparser.git
+            git clone https://github.com/RaymanJr/blockparser.git
             cd blockparser
             make
 
@@ -42,30 +44,33 @@ blockparser
 
             ./parser simpleStats
 
-        . Extract all transactions for popular address 1dice6wBxymYi3t94heUAG6MpG5eceLG1 (20 seconds)
+        . Extract all transactions for specified address <address>
 
-            ./parser transactions 06f1b66fa14429389cbffa656966993eab656f37
+            ./parser transactions <address>
 
         . Compute the closure of an address, that is the list of addresses that provably belong to the same person (20 seconds):
 
-            ./parser closure 06f1b66fa14429389cbffa656966993eab656f37
+            ./parser closure <address>
 
         . Compute and print the balance for all keys ever used in a TX since the beginning of time (30 seconds):
 
             ./parser allBalances >allBalances.txt
-
-        . See how much of the BTC 10K pizza tainted each of the TX in the chain
+            
+         For bitcoin only:
+         . See how much of the BTC 10K pizza tainted each of the TX in the chain
 
             ./parser taint >pizzaTaint.txt
 
-        . See all the block rewards and fees:
+         . See all the block rewards and fees:
 
             ./parser rewards >rewards.txt
 
-        . See a greatly detailed dump of the pizza transaction
+         . See a greatly detailed dump of the pizza transaction
 
             ./parser show
 
+        
+        
     Caveats:
     --------
 
