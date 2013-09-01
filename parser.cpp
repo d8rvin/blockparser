@@ -1,4 +1,3 @@
-
 #include <util.h>
 #include <common.h>
 #include <errlog.h>
@@ -367,8 +366,8 @@ static void initCallback(
 static void mapBlockChainFiles()
 {
     std::string coinName(
-        #if defined LITECOIN
-            "/.litecoin/"
+        #if defined WORLDCOIN
+            "/.worldcoin/"
         #else
             "/.bitcoin/"
         #endif
