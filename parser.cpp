@@ -513,7 +513,7 @@ static bool buildBlock(
 )
 {
     static const uint32_t expected =
-    #if defined(LITECOIN)
+    #if defined(WORLDCOIN)
         0xdbb6c0fb
     #else
         0xd9b4bef9
