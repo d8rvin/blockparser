@@ -7,6 +7,7 @@ INC =                           \
         -I.                     \
         -DNDEBUG                \
 #        -DWORLDCOIN             \
+#        -DFRACTALCOIN           \
 
 COPT =                          \
         -g0                     \
