@@ -367,7 +367,7 @@ static void mapBlockChainFiles()
 {
     std::string coinName(
         #if defined WORLDCOIN
-            "/.worldcoin/"
+            "/.fractalcoin/"
         #else
             "/.bitcoin/"
         #endif

@@ -428,7 +428,7 @@ bool addrToHash160(
         uint8_t data[1+kRIPEMD160ByteSize];
         memcpy(1+data, hash160, kRIPEMD160ByteSize);
         #if defined(WORLDCOIN)
-            data[0] = 73;
+            data[0] = 20;
         #else
             data[0] = 0;
         #endif
